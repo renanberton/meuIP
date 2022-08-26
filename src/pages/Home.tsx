@@ -26,29 +26,32 @@ export function Home() {
 
     }, [ip])
     return (
-        <div className='boxIp'>
-            <div>
-                <h1>Descubra seu IP</h1>
-                <ul>
-                    <li>
-                        Seu IP: {ip?.query}
-                    </li>
-                    <li>
-                        Pais de origem: {ip?.country}
-                    </li>
-                    <li>
-                        Cidade de Origem: {ip?.city}
-                    </li>
-                    <li>
-                        Região: {ip?.regionName}
-                    </li>
-                    <li>
-                        Operadora: {ip?.isp}
-                    </li>
-                    <li>
-                        Furo horário: {ip?.timezone}
-                    </li>
-                </ul>
+        <div className="container">
+
+            <div className='boxIp'>
+                <div>
+                    <h1>Meu IP</h1>
+                    <ul>
+                        <li>
+                            Seu IP: {ip?.query}
+                        </li>
+                        <li>
+                            Pais de origem: {ip?.country}
+                        </li>
+                        <li>
+                            Cidade de Origem: {ip?.city}
+                        </li>
+                        <li>
+                            Região: {ip?.regionName}
+                        </li>
+                        <li>
+                            Operadora: {ip?.isp}
+                        </li>
+                        <li>
+                            Furo horário: {ip?.timezone}
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     )
