@@ -16,7 +16,7 @@ export function Home() {
 
     useEffect(() => {
         function LoadCEP() {
-            fetch('http://ip-api.com/json')
+            fetch('//ip-api.com/json')
                 .then(response => response.json())
                 .then(data => setIp(data))
 
