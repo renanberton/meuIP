@@ -2,13 +2,10 @@ import { useEffect, useState } from 'react';
 import './style.scss';
 
 type IpType = {
-    query: string,
+    ip: string,
     country: string,
-    regionName: string,
+    region: string,
     city: string,
-    timezone: string,
-    isp: string,
-
 }
 
 export function Home() {
@@ -16,7 +13,7 @@ export function Home() {
 
     useEffect(() => {
         function LoadCEP() {
-            fetch('http://ip-api.com/json')
+            fetch('https://ipwho.is/')
                 .then(response => response.json())
                 .then(data => setIp(data))
 
@@ -33,7 +30,7 @@ export function Home() {
                     <h1>Meu IP</h1>
                     <ul>
                         <li>
-                            Seu IP: {ip?.query}
+                            Seu IP: {ip?.ip}
                         </li>
                         <li>
                             Pais de origem: {ip?.country}
@@ -42,14 +39,9 @@ export function Home() {
                             Cidade de Origem: {ip?.city}
                         </li>
                         <li>
-                            Região: {ip?.regionName}
+                            Região: {ip?.region}
                         </li>
-                        <li>
-                            Operadora: {ip?.isp}
-                        </li>
-                        <li>
-                            Furo horário: {ip?.timezone}
-                        </li>
+
                     </ul>
                 </div>
             </div>
