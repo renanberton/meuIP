@@ -17,7 +17,7 @@ export function Home() {
     const [ip, setIp] = useState<IpType>();
 
     useEffect(() => {
-        let url = "http://ip-api.com/json/?fields=";
+        let url = "http://ip-api.com/json";
 
         fetch(url).then(res => res.json()).then(data => {
             setIp(data);
