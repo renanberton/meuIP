@@ -2,12 +2,12 @@ import { useEffect, useState } from 'react';
 import './style.scss';
 
 type IpType = {
-    ip: string,
+    query: string,
     country: string,
     region: string,
     city: string,
-    latitude: string,
-    longitude: string,
+    lat: string,
+    lon: string,
 }
 
 
@@ -17,7 +17,7 @@ export function Home() {
     const [ip, setIp] = useState<IpType>();
 
     useEffect(() => {
-        let url = "https://ipwho.is/";
+        let url = "http://ip-api.com/json/?fields=";
 
         fetch(url).then(res => res.json()).then(data => {
             setIp(data);
@@ -32,7 +32,7 @@ export function Home() {
                         <h1>Meu IP</h1>
                         <ul>
                             <li>
-                                Seu IP: {ip?.ip}
+                                Seu IP: {ip?.query}
                             </li>
                             <li>
                                 Pais de origem: {ip?.country}
@@ -45,7 +45,7 @@ export function Home() {
                             </li>
                         </ul>
                     </div>
-                    <iframe src={`https://maps.google.com/maps?q=@${ip?.latitude},${ip?.longitude}&z=${zoom}&output=embed`} />
+                    <iframe src={`https://maps.google.com/maps?q=@${ip?.lat},${ip?.lon}&z=${zoom}&output=embed`} />
                 </div>
             </div>
         </div>
