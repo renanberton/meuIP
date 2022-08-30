@@ -10,20 +10,19 @@ type IpType = {
     longitude: string,
 }
 
+
+
 export function Home() {
-    const [ip, setIp] = useState<IpType>();
     const zoom = 15;
+    const [ip, setIp] = useState<IpType>();
 
     useEffect(() => {
-        function LoadCEP() {
-            fetch('https://ipwho.is/')
-                .then(response => response.json())
-                .then(data => setIp(data))
+        let url = "https://ipwho.is/";
 
-        }
-        LoadCEP()
-    }, [ip])
-
+        fetch(url).then(res => res.json()).then(data => {
+            setIp(data);
+        })
+    }, [])
 
     return (
         <div>
