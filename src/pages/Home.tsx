@@ -13,6 +13,7 @@ type IpType = {
 export function Home() {
     const [ip, setIp] = useState<IpType>();
     const zoom = 15;
+
     useEffect(() => {
         function LoadCEP() {
             fetch('https://ipwho.is/')
@@ -45,7 +46,7 @@ export function Home() {
                             </li>
                         </ul>
                     </div>
-                    {/* <iframe src={`https://maps.google.com/maps?q=@${ip?.latitude},${ip?.longitude}&z=${zoom}&output=embed`} /> */}
+                    <iframe src={`https://maps.google.com/maps?q=@${ip?.latitude},${ip?.longitude}&z=${zoom}&output=embed`} />
                 </div>
             </div>
         </div>
