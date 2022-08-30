@@ -45,7 +45,7 @@ export function Home() {
                             </li>
                         </ul>
                     </div>
-                    <iframe src={`https://maps.google.com/maps?q=@${ip?.latitude},${ip?.longitude}&z=${zoom}&output=embed`} />
+                    {/* <iframe src={`https://maps.google.com/maps?q=@${ip?.latitude},${ip?.longitude}&z=${zoom}&output=embed`} /> */}
                 </div>
             </div>
         </div>
